@@ -236,7 +236,7 @@ Parameters:
   QSS3BucketName:
     Description: S3 bucket for Quick Start assets. Use this if you want to customize the Quick Start. The bucket name can include numbers, lowercase letters, uppercase letters, and hyphens, but it cannot start or end with a hyphen (-).
     AllowedPattern: '(?=^.{3,63}$)(?!xn--)([a-z0-9](?:[a-z0-9-]*)[a-z0-9])$'
-    Default: aws-ia-us-east-1
+    Default: aws-ia
     Type: String
     ConstraintDescription: Quick Start bucket name can include numbers, lowercase letters, uppercase letters, and hyphens, but it cannot start or end with a hyphen (-).
   QSS3KeyPrefix:
