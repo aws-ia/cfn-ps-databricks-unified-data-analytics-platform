@@ -374,7 +374,7 @@ Mappings:
     eu-west-2:
       "workspace": "com.amazonaws.vpce.eu-west-2.vpce-svc-01148c7cdc1d1326c"
       "backend": "com.amazonaws.vpce.eu-west-2.vpce-svc-05279412bf5353a45"
-      eu-west-3:
+    eu-west-3:
       "workspace": "com.amazonaws.vpce.eu-west-3.vpce-svc-008b9368d1d011f37"
       "backend": "com.amazonaws.vpce.eu-west-3.vpce-svc-005b039dd0b5f857d" 
     sa-east-1:
