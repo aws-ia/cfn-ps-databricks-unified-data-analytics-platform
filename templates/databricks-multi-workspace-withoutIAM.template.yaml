@@ -338,10 +338,10 @@ Rules:
 # ***********************************************************************************************************************
   AWSQuickStartGitParametersSettings:
     Assertions:
-    - Assert: !Equals ['aws-quickstart', !Ref QSS3BucketName]
-      AssertDescription: QSS3BucketName must be set to aws-quickstart.
-    - Assert: !Equals ['quickstart-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
-      AssertDescription: "QSS3KeyPrefix must be set to quickstart-databricks-unified-data-analytics-platform/."
+    - Assert: !Equals ['aws-ai', !Ref QSS3BucketName]
+      AssertDescription: The QSS3BucketName MUST be set to aws-ai  
+    - Assert: !Equals ['cfn-ps-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
+      AssertDescription: "The QSS3KeyPrefix MUST be set to - cfn-ps-databricks-unified-data-analytics-platform/"
 
 # 6. Optional Section. Ensure that the SubnetIds for the endpoints are provided if the user has asked for PrivateLink and provides a VPC
   PrivateLinkForCustomerManagedVPC:
