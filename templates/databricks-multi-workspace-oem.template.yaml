@@ -372,8 +372,8 @@ Rules:
 # ***********************************************************************************************************************
   AWSQuickStartGitParametersSettings:
     Assertions:
-    - Assert: !Equals ['aws-ai', !Ref QSS3BucketName]
-      AssertDescription: The QSS3BucketName MUST be set to aws-ai  
+    - Assert: !Equals ['aws-ia', !Ref QSS3BucketName]
+      AssertDescription: The QSS3BucketName MUST be set to aws-ia  
     - Assert: !Equals ['cfn-ps-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
       AssertDescription: "The QSS3KeyPrefix MUST be set to - cfn-ps-databricks-unified-data-analytics-platform/"
 
