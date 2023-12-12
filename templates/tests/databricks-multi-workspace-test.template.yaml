@@ -305,9 +305,9 @@ Rules:
   AWSQuickStartGitParametersSettings:
     Assertions:
 #    - Assert: !Equals ['aws-quickstart', !Ref QSS3BucketName]
-#      AssertDescription: The QSS3BucketName MUST be set to aws-quickstart
-    - Assert: !Equals ['quickstart-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
-      AssertDescription: "The QSS3KeyPrefix MUST be set to - quickstart-databricks-unified-data-analytics-platform/"
+#      AssertDescription: The QSS3BucketName MUST be set to aws-ia
+    - Assert: !Equals ['cfn-ps-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
+      AssertDescription: "The QSS3KeyPrefix MUST be set to - cfn-ps-databricks-unified-data-analytics-platform//"
  
 Resources:
   # The VPC
