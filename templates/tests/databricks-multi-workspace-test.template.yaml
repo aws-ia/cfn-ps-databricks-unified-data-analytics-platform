@@ -205,7 +205,7 @@ Parameters:
   QSS3BucketName:
     Description: "S3 bucket for Quick Start assets. Use this if you want to customize the Quick Start. The bucket name can include numbers, lowercase letters, uppercase letters, and hyphens, but it cannot start or end with a hyphen (-)."
     AllowedPattern: '^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$'
-    Default: aws-quickstart
+    Default: aws-ia
     Type: String
     MinLength: '3'
     MaxLength: '63'
@@ -214,7 +214,7 @@ Parameters:
     Description: "S3 key prefix to simulate a directory for your Quick Start assets. Use this if you want to customize the Quick Start. The prefix can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slashes (/). For more information, see https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html."
     AllowedPattern: '^[0-9a-zA-Z-/]*$'
     Type: String
-    Default: quickstart-databricks-unified-data-analytics-platform/
+    Default: cfn-ps-databricks-unified-data-analytics-platform/
   
 
 Conditions:
@@ -252,6 +252,8 @@ Rules:
         - eu-central-1
         - eu-west-1
         - eu-west-2
+        - eu-west-3
+        - sa-east-1
         - us-east-1
         - us-east-2
         - us-west-1
@@ -303,9 +305,9 @@ Rules:
   AWSQuickStartGitParametersSettings:
     Assertions:
 #    - Assert: !Equals ['aws-quickstart', !Ref QSS3BucketName]
-#      AssertDescription: The QSS3BucketName MUST be set to aws-quickstart
-    - Assert: !Equals ['quickstart-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
-      AssertDescription: "The QSS3KeyPrefix MUST be set to - quickstart-databricks-unified-data-analytics-platform/"
+#      AssertDescription: The QSS3BucketName MUST be set to aws-ia
+    - Assert: !Equals ['cfn-ps-databricks-unified-data-analytics-platform/', !Ref QSS3KeyPrefix]
+      AssertDescription: "The QSS3KeyPrefix MUST be set to - cfn-ps-databricks-unified-data-analytics-platform//"
  
 Resources:
   # The VPC
@@ -713,7 +715,6 @@ Resources:
                   - 'ec2:DescribeInternetGateways'
                   - 'ec2:DescribeNatGateways'
                   - 'ec2:DescribeNetworkAcls'
-                  - 'ec2:DescribePlacementGroups'
                   - 'ec2:DescribePrefixLists'
                   - 'ec2:DescribeReservedInstancesOfferings'
                   - 'ec2:DescribeRouteTables'
@@ -724,13 +725,23 @@ Resources:
                   - 'ec2:DescribeVolumes'
                   - 'ec2:DescribeVpcAttribute'
                   - 'ec2:DescribeVpcs'
-                  - 'ec2:CreatePlacementGroup'
-                  - 'ec2:DeletePlacementGroup'
-                  - 'ec2:CreateKeyPair'
-                  - 'ec2:DeleteKeyPair'
                   - 'ec2:CreateTags'
                   - 'ec2:DeleteTags'
                   - 'ec2:RequestSpotInstances'
+                  - 'ec2:DescribeFleetHistory'
+                  - 'ec2:ModifyFleet'
+                  - 'ec2:DeleteFleets'
+                  - 'ec2:DescribeFleetInstances'
+                  - 'ec2:DescribeFleets'
+                  - 'ec2:CreateFleet'
+                  - 'ec2:DeleteLaunchTemplate'
+                  - 'ec2:GetLaunchTemplateData'
+                  - 'ec2:CreateLaunchTemplate'
+                  - 'ec2:DescribeLaunchTemplates'
+                  - 'ec2:DescribeLaunchTemplateVersions'
+                  - 'ec2:ModifyLaunchTemplate'
+                  - 'ec2:DeleteLaunchTemplateVersions'
+                  - 'ec2:CreateLaunchTemplateVersion'
                 Resource:
                   - '*'
               - Sid: InstancePoolsSupport
