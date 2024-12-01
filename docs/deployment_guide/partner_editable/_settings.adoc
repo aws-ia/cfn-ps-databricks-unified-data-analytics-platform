@@ -3,7 +3,7 @@
 :partner-product-name: Databricks
 :partner-product-short-name: Databricks
 :partner-company-name: Databricks
-:doc-month: July
+:doc-month: October
 :doc-year: 2023
 :partner-contributors: Denis Dubeau, {partner-company-name}
 // :other-contributors: Akua Mansa, Trek10
